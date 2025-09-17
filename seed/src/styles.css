@@ -1,0 +1,101 @@
+/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+/* Extend defaults (do NOT wipe Tailwind’s palette) */
+@theme {
+  /* ===== Colors ===== */
+  /* Neutrals */
+  --color-neutral-white: #ffffff;
+  --color-neutral-silver: #f5f7fa;
+  --color-neutral-grey-blue: #abbed1;
+  --color-neutral-l-grey: #89939e;
+  --color-neutral-grey: #717171;
+  --color-neutral-d-grey: #4d4d4d;
+  --color-neutral-l-black: #263238;
+  --color-neutral-black: #000000;
+  --color-neutral-white-stroke: #abbed1;
+
+  /* Brand */
+  --color-brand-info: #2554fe;
+  --color-brand-secondary: #de0108;
+  --color-brand-primary: #eca329;
+
+  /* Shade */
+  --color-shade-s1: #e4b201;
+  --color-shade-s2: #b28b01;
+  --color-shade-s3: #4c3b00;
+  --color-shade-s4: #4c3b00;
+  --color-shade-s5: #191400;
+
+  /* Tint */
+  --color-tint-t1: #fecc1b;
+  --color-tint-t2: #fed74d;
+  --color-tint-t3: #fee380;
+  --color-tint-t4: #ffeeb3;
+  --color-tint-t5: #fff9e6;
+
+  /* Action */
+  --color-action-success: #2e7d31;
+  --color-action-error: #e53835;
+  --color-action-warning: #fbc02d;
+
+  /* ===== Typography ===== */
+  /* Font family */
+  --font-arial: Arial;
+
+  /* Font sizes (keep names so you get text-xs, text-sm, …) */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 4rem;
+
+  /* ===== Shadows ===== */
+  --shadow-2px: 0px 2px 4px 0px rgb(171 190 209 / 0.6);
+  --shadow-4px: 0px 4px 8px 0px rgb(171 190 209 / 0.4);
+  --shadow-6px: 0px 6px 12px 0px rgb(171 190 209 / 0.3);
+  --shadow-8px: 0px 8px 16px 0px rgb(171 190 209 / 0.4);
+  --shadow-16px: 0px 16px 32px 0px rgb(171 190 209 / 0.3);
+
+  /* You’ll get utilities like rounded-8, rounded-12, etc. */
+  --radius-0: 0rem;
+  --radius-1: 0.05000000074505806rem;
+  --radius-2: 0.0625rem;
+  --radius-3: 0.07500000298023224rem;
+  --radius-4: 0.125rem;
+  --radius-5: 0.15625rem;
+  --radius-6: 0.17401736974716187rem;
+  --radius-7: 0.1875rem;
+  --radius-8: 0.25rem;
+  --radius-9: 0.3125rem;
+  --radius-10: 0.34803473949432373rem;
+  --radius-11: 0.375rem;
+  --radius-12: 0.5rem;
+  --radius-13: 0.625rem;
+  --radius-14: 1.25rem;
+}
+
+@layer base {
+  html { background-color: var(--color-tint-t5); }
+}
+
+@layer base {
+  body {
+    @apply w-4/5 mx-auto;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2
+           font-medium rounded-12 shadow-4px transition-colors;
+  }
+  .btn-primary    { @apply bg-brand-primary text-neutral-white hover:bg-tint-t1; }
+  .btn-secondary  { @apply bg-transparent text-brand-primary border border-brand-primary hover:bg-tint-t4; }
+  .btn-tertiary   { @apply bg-transparent text-brand-primary hover:text-shade-s2; }
+  .btn-icon       { @apply size-10 rounded-8 grid place-items-center; }
+  .btn-disabled   { @apply opacity-50 pointer-events-none; }
+}
